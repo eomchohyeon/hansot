@@ -1,0 +1,563 @@
+@charset "utf-8";
+
+/* css reset */
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body,html{
+  font-size: 12px;
+  line-height: 1;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+  font-size: 1rem;
+}
+ol,ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+img{
+  vertical-align: bottom;
+}
+address,em{
+  font-style: normal;
+}
+input,select{
+  vertical-align: middle;
+}
+table{
+  border-collapse: collapse;
+}
+button{
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+}
+#wrap{
+  width: 100%;
+  min-width: 1100px;
+}
+/* 중앙정렬을 위한 영역. 공통요소는 위쪽에 모아서 정리해준다. */
+.container{
+  width: 1100px;
+  margin: auto;
+}
+/* float에 의해서 사라진 높이값 찾아주는 방법 */
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 헤더 */
+header{
+  position: fixed;
+  z-index: 999;             /* margin-top 대신 top 사용 */
+  left: 50%;              /* 화면 기준 중앙 정렬 시작 */
+  transform: translateX(-50%); /* 자신의 너비 기준 중앙으로 이동 */
+  width: 100%;
+  height: 120px;
+  background: #ffffff;
+}
+/* 로고 */
+h1#logo{
+  float: left;
+  padding: 1rem 0;
+}
+h1#logo a{
+  display: block;
+}
+h1#logo a img{
+  margin-left: 15px;
+  margin-top: 25px;
+}
+/* 메뉴 */
+.menu{
+  width: 800px;
+  float: right;
+  margin-top: 25px;
+}
+
+#menu_bg{
+  width: 1910px;
+  height: 305px;
+  background: #000000a6;
+  position: absolute;
+  z-index: 999;
+  top: 120px;
+  left: 0;
+  margin: 0 auto;
+  display: none;
+}
+
+.navi{
+  width: 900px;
+  float: left;
+  height: 50px;
+}
+.navi>li{
+  float: left;
+  height: 40px;
+  margin-top: 30px;
+  margin-left: 60px;
+  line-height: 20px;
+  position: relative;
+}
+.navi>li>a{
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 메뉴 항목에 마우스를 올렸을 때 하단에 언더라인 추가 */
+.navi>li>a::after {
+  content: '';
+  display: block;
+  border-bottom: 5px solid #ffce00;
+  width: 0;
+  margin: 10px auto;
+  transition: 0.5s;
+}
+
+.navi>li>a:hover::after {
+  width: 100%; /* 마우스를 올렸을 때 언더라인이 길어짐 */
+}
+/* 서브메뉴 */
+.submenu{
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  margin-top: 30px;
+  display: none;
+  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+.submenu ul{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.submenu li{
+  text-align: center;
+}
+.submenu li a {
+  width: 100%;
+  color: white;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  text-align: center;
+}
+.submenu li a:hover {
+  width: 100%;
+  color: #ffce00;/* 서브메뉴 항목에 마우스를 올리면 배경색 */
+}
+.submenu li a:hover::after {
+  width: 100%; /* 마우스를 올렸을 때 언더라인이 길어짐 */
+}
+
+
+
+  /* 서브페이지 */
+  
+  /* 서브페이지1-브랜드이야기 */
+  .slideimg{
+    width: 1910px;
+    height: 950px;
+    margin: 0 auto;
+    z-index: 99999;
+    background: #ffce00;
+  }
+  .slideimg img{
+    margin: auto;
+    transform: translateY(165px);
+    width: 1910px;
+
+  }
+  .effect{
+    position: absolute;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  .effect li:nth-child(1) img {
+    margin-left: 770px;
+  }
+  
+  .effect li:nth-child(2) img {
+    margin-left: 1115px;
+    margin-top: 353px;
+    width: 540px;
+  }
+  .effect img{
+    width: 520px;
+    margin-top: 340px;
+    animation: spin 20s linear infinite; /* 10초에 한 바퀴 */
+    position: absolute;
+  }
+  
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .contents1{
+    margin: 0 auto;
+    width: 100%;
+    height: 600px;
+    margin-top: 150px;
+  }
+  .box1{
+    margin: 0 auto;
+    width: 1100px;
+  }
+  .box1-l{
+    width: 50%;
+    float: left;
+    line-height: 30px;
+    padding: 50px;
+  }
+  .box1-l h5{
+    font-size: 18px;
+    color: #424242;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+  .box1-l img:hover{
+    scale: 1.1;
+  }
+  .box1-l h2{
+    font-size: 50px;
+    height: 100px;
+    line-height: 50px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+  .box1-l img{
+    width: 300px;
+    margin-top: -80px;
+    margin-left: 30px;
+    transition: 0.5s;
+  }
+  .box1-r{
+    height: 500px;
+    width: 50%;
+    float: right;
+  }
+  .box1-r p span{
+    color: #ffce00;
+    font-weight: bold;
+  }
+  .box1-r p{
+    font-size: 15px;
+    margin-top: 50px;
+    line-height: 25px;
+    width: 430px;
+  }
+  
+  /* 백그라운드 비디오 */
+  video{
+    margin-top: 150px;
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    object-fit: cover; /* 비율 유지하며 꽉 채우기 */
+    pointer-events: none; /* 클릭 방지 */
+  }
+  .contents2{
+    width: 100%;
+    position: relative;
+    margin-top: 150px;
+  }
+  .box2{
+    margin: 0 auto;
+    width: 1910px;
+  
+  }
+  .box2-l{
+    float: left;
+    width: 50%;
+  }
+  .box2-l img{
+    width: 500px;
+    object-fit: cover;
+    padding: 50px;
+    margin-top: 110px;
+    margin-left: 400px;
+  }
+  .box2-r{
+    float: left;
+    width: 50%;
+    margin-top: 70px;
+    margin-left: -470px;
+  }
+  .box2-r h2{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+    color: #ffffff;
+    margin-top: 80px;
+    margin-right: 50px;
+    line-height: 50px;
+  }
+  .box2-r span{
+    float: right;
+    width: 100px;
+    height: 10px;
+    background: #ffffff;
+    margin-right: 50px;
+    margin-top: 20px;
+  }
+  .box2-r p{
+    float: right;
+    text-align: right;
+    font-size: 16px;
+    margin-top: 80px;
+    width: 340px;
+    line-height: 30px;
+    margin-right: -100px;
+    color: #ffffff;
+  }
+  .contents3{
+    width: 1910px;
+    height: 1800px;
+    margin: 0 auto;
+  }
+  .box3{
+    float: left;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .box3-l{
+    float: left;
+    width: 25%;
+    height: 600px;
+    margin-top: 250px;
+    margin-left: 450px;
+  }
+  .box3-l h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 50px;
+  }
+  .box3-l span{
+    width: 100px;
+    height: 10px;
+    margin-top: 30px;
+    background: #333333;
+    position: absolute;
+  }
+  .box3-l p{
+    font-size: 15px;
+    float: left;
+    font-size: 16px;
+    margin-top: 120px;
+    width: 340px;
+    line-height: 30px;
+  }
+  .box3-r{
+    width: 50%;
+    float: left;
+  }
+  .box3-r img{
+    width: 450px;
+    margin-top: 250px;
+  }
+  .box4{
+    margin: 0 auto;
+    width: 1910px;
+    margin-top: -300px;
+  }
+  
+  .box4 img{
+    width: 1910px;
+    margin-bottom: 100px;
+  }
+  .textcover1{
+    margin: 0 auto;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 420px;
+  }
+  .box4 h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 50px;
+  }
+  .box4 span{
+    width: 100px;
+    height: 8px;
+    margin-top: 30px;
+    background: #ffffff;
+    position: absolute;
+  }
+  .box4 p{
+    font-size: 15px;
+    float: left;
+    font-size: 16px;
+    margin-top: 120px;
+    line-height: 30px;
+    color: #ffffff;
+  }
+  
+  /* 서브페이지1-브랜드이야기 끝 */
+
+
+  /* 더 많은 이야기 */
+.notice1{
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 400px;
+    position: relative;
+  }
+  .notice1 h4{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 10px;
+    color: #333333;
+    margin-left: 30px;
+  }
+  .notice1>span{
+    width: 850px;
+    height: 5px;
+    margin-right:70px;
+    margin-top: 2px;
+    background: #333333;
+    float: right;
+  
+  }
+  .notice1 img{
+    margin: 0 auto;
+    float: left;
+    width: 310px;
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: -94px;
+  }
+  .notice1 li span{
+    width: 310px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    margin-left: -410px;
+    margin-top: 220px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 60px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .notice1 li span:hover{
+    opacity: 0.5;
+    background: #ffce00;
+    color: #333333;
+  }
+
+/* footer */
+footer{
+    margin: 0 auto;
+    z-index: 9999;
+    position: relative;
+    transform: translateY(200px);
+    margin-bottom: 0;
+  
+    background: #ffce00;
+    
+  }
+  .bottom{
+    margin: 0 auto;
+    height: 280px;
+    width: 1100px;
+    padding: 4rem;
+  }
+  .f-top{
+    border-bottom: 1px solid;
+    padding-bottom: 3rem;
+  }
+  .btmenu{
+    font-size: 15px;
+    margin-left: 30px;
+    
+  }
+  .btmenu li{
+    float: left;
+    margin-left: 20px;
+  }
+  .btmenu span{
+    margin-right: 20px;
+  }
+  .btmenu span:hover{
+    font-weight: bold;
+  }
+  .btmenu img{
+    float: right;
+    margin-right: 90px;
+    margin-top: -25px;
+  }
+  .btbar{
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 1000px;
+    height: 2px;
+    background: #ebc342;
+  }
+  .about{
+    float: left;
+    font-size: 15px;
+    margin-left: 120px;
+    font-size: 12px;
+    color: #333333;
+    text-align: center;
+    margin-top: 5px;
+  }
+  .about li{
+    float: left;
+    margin-left: 10px;
+    line-height: 30px;
+  }
+  .about span{
+    margin-right: 10px;
+  }
+  .copy{
+    width: 1100px;
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    margin-left: -70px;
+    margin-top: 20px;
+    color: #333333;
+  }
+  .sns{
+    margin: 0 auto;
+    width: 300px;
+    margin-left: 410px;
+  }
+  .sns li{
+    float: left;
+    margin-left: 10px;
+  }
+  .sns img{
+    width: 40px;
+    margin-top: 40px;
+  }
+  .sns img:hover{
+    opacity: 0.5;
+  }
+  
+  
+    
