@@ -61,32 +61,36 @@ $('.navi>li').mouseenter(function(){
       startInterval();
   // 슬라이드 끝
 
-  const text = document.querySelectorAll('.box1-r p span');
-  let index = 0;
-  
-  function typeEffect(element) {
-    const textContent = element.textContent;
-    element.textContent = '';
-    let i = 0;
-    const typing = setInterval(() => {
-      if (i < textContent.length) {
-        element.textContent += textContent.charAt(i);
-        i++;
-      } else {
-        clearInterval(typing);
-      }
-    }, 60);
-  }
-  
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        text.forEach(span => typeEffect(span));
-      }
-    });
-  }, { threshold: 0.9 });
-  
-  document.querySelectorAll('.box1-r p span').forEach(span => observer.observe(span));
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const text = document.querySelectorAll('.box1-r p span');
   
-})
+    function typeEffect(element) {
+      const textContent = element.textContent;
+      element.textContent = '';
+      let i = 0;
+      const typing = setInterval(() => {
+        if (i < textContent.length) {
+          element.textContent += textContent.charAt(i);
+          i++;
+        } else {
+          clearInterval(typing);
+        }
+      }, 60);
+    }
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // span마다 중복으로 타이핑이 되지 않도록 한 번만 실행되도록 조건 추가
+          if (!entry.target.dataset.typed) {
+            typeEffect(entry.target);
+            entry.target.dataset.typed = 'true';
+          }
+        }
+      });
+    }, { threshold: 0.9 });
+  
+    text.forEach(span => observer.observe(span));
+  });
+});
