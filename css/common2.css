@@ -377,7 +377,7 @@ main img{
 
 .effect4 {
   top: 15%;
-  left: 80%;
+  left: 60%;
   animation-name: shake-scale;
 }
 
@@ -417,8 +417,46 @@ main img{
   50% { transform: scale(0.95); }
   75% { transform: scale(1.05); }
 }
+.section-wrap {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+.healthy {
+  position: absolute;
+  top: -600px;
+  left: -200px;
+  width: 100%;
+  padding-left: 20px;
+  z-index: 2;
+}
+.healthy h2 {
+  color: #ffffff;
+  font-size: 30px;
+  width: 50%;
+  margin-left: auto;  /* 오른쪽 정렬 */
+  text-align: right;
+  line-height: 1.8;
+  padding: 20px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.healthy span{
+  width: 100px;
+  height: 10px;
+  background: #ffffff;
+}
 
-
+.healthy p {
+  color: #ffffff;
+  font-size: 18px;
+  width: 50%;
+  margin-left: auto;  /* 오른쪽 정렬 */
+  text-align: right;
+  line-height: 1.8;
+  padding: 20px;
+  white-space: nowrap;
+}
 video{
   width: 100%;
   height: 100vh;
@@ -431,7 +469,7 @@ video{
     width: 1100px;
     margin: 0 auto;
     margin-top: 100px;
-    margin-bottom: 400px;
+    margin-bottom: 500px;
     z-index: 2;
     background: #ffffff;
     position: relative;
@@ -488,6 +526,7 @@ footer{
     background: #ffce00;
     position: relative;
     z-index: 99999;
+    position: fixed––;
     
   }
   .bottom{
