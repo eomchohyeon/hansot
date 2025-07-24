@@ -277,6 +277,7 @@ h1#logo a img{
     width: 100%;
     position: relative;
     margin-top: 150px;
+    color: #333333;
   }
   .box2{
     margin: 0 auto;
@@ -291,14 +292,14 @@ h1#logo a img{
     width: 500px;
     object-fit: cover;
     padding: 50px;
-    margin-top: 110px;
-    margin-left: 400px;
+    margin-top: 140px;
+    margin-left: 100px;
   }
   .box2-r{
     float: left;
-    width: 50%;
+    width: 30%;
     margin-top: 70px;
-    margin-left: -470px;
+    margin-right: 150px;
   }
   .box2-r h2{
     font-size: 40px;
@@ -344,7 +345,7 @@ h1#logo a img{
     width: 25%;
     height: 600px;
     margin-top: 250px;
-    margin-left: 450px;
+    margin-left: 280px;
   }
   .box3-l h2{
     font-size: 40px;
@@ -375,10 +376,36 @@ h1#logo a img{
     width: 450px;
     margin-top: 250px;
   }
+/* 중앙정렬 */
+  .box2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .box2-l, .box2-r {
+    width: 50%;
+  }
+  
+  .box2-l img {
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
+    padding: 50px;
+  }
+  
+  .box2-r h2, .box2-r p, .box2-r span {
+    text-align: right;
+    color: #fff;
+  }
+/* 중앙정렬 */
+
   .box4{
     margin: 0 auto;
     width: 1910px;
-    margin-top: -300px;
+    margin-top: -1000px;
   }
   
   .box4 img{
